@@ -56,7 +56,7 @@ app.post("/repositories/:id/like", (request, response) => {
     return response.status(400).json({error: "Repository with this id can't be found"})
   }else{
     repositories[repositoryIndex].likes++
-    return response.status(204).send()
+    return response.json(repositories[repositoryIndex])
   }
 });
 
